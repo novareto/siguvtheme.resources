@@ -1,0 +1,11 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="bg.siguvtheme"
+   package="bg.siguvtheme"
+   >
+
+  <includeOverrides package="uvcsite" file="ftesting.zcml"/>
+  <include package="bg.siguvtheme" />
+
+</configure>
+

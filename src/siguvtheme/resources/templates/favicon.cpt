@@ -1,0 +1,2 @@
+<link type="image/x-ico; charset=binary" href="#" rel="shortcut icon"
+      tal:attributes="href static.get('favicon.ico', '')">

@@ -1,0 +1,13 @@
+<ul id="quicklinks" class="nav navbar-nav navbar-right">
+  <li class="dropdown yellow">
+    <a data-toggle="dropdown" class="dropdown-toggle quick-links" href="#">
+      <tal:title replace="viewlet.title" /> <b class="caret"></b>
+    </a>
+    <ul role="menu" class="dropdown-menu">
+      <li tal:repeat="menu viewlet.menus">
+	<a href="" tal:attributes="href menu.action"
+	   tal:content="structure menu.title" />
+      </li>
+    </ul>
+  </li>
+</ul>

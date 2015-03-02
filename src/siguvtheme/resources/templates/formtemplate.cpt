@@ -1,0 +1,36 @@
+<h1 tal:condition="view.label" class="title" tal:content="view.label">Label </h1>
+<p tal:condition="view.description" tal:content="view.description">Description</p>
+<p class="form-status" tal:condition="view.status"
+tal:content="view.status">Status</p>
+
+<form novalidate="novalidate" action="." tal:attributes="action request.URL" method="post"
+enctype="multipart/form-data" class="form-horizontal">
+  <div class="fields" tal:condition="view.fieldWidgets">
+    <div tal:attributes="class widget.error and 'form-group alert-danger has-error' or 'form-group'; id 'field-' + widget.htmlId()" tal:repeat="widget view.fieldWidgets">
+      <tal:presentation condition="widget.isVisible()">
+          <div class="row input controls">
+	    <label class="col-sm-3 control-label"
+		   tal:attributes="for widget.htmlId()">
+	      <span tal:content="widget.title">Name</span>
+	      <span tal:condition="widget.required">*</span>
+	    </label>
+	    <div class="col-sm-4">
+        <tal:widget tal:content="structure widget.render()" />
+      </div>
+      <div class="col-sm-12 col-sm-offset-3">
+	      <span class="help-block" tal:condition="widget.description and not widget.error" tal:content="widget.description" tal:attributes="for widget.htmlId()" />
+        <span class="help-inline" tal:condition="widget.error" tal:content="widget.error.title" />
+	    </div>
+          </div>
+      </tal:presentation>
+    </div>
+  </div>
+
+  <div class="actions form-actions col-sm-offset-2 col-sm-10"
+       tal:condition="view.actionWidgets">
+    <div class="action" tal:repeat="widget view.actionWidgets">
+      <tal:widget tal:content="structure widget.render()" />
+    </div>
+  </div>
+
+</form>

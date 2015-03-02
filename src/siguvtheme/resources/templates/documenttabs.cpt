@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs" tal:define="actions viewlet.actions" tal:condition="actions">
+  <tal:loop repeat="action actions">
+    <li tal:attributes="class action['selected'] and 'active' or None">
+      <a tal:attributes="href action['action'];
+			 title action['title'];"
+	   tal:content="action['title']" />
+    </li>
+  </tal:loop>
+</ul>

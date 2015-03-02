@@ -1,0 +1,84 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle"
+	      data-target=".navbar-nav-collapse"
+	      data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div tal:attributes="id viewlet.id"
+	 class="collapse navbar-collapse navbar-nav-collapse">
+      <ul class="nav navbar-nav" id="main-nav">
+        <!--
+        <li class="active">
+          <a tal:attributes="href viewlet.application_url()">
+          <span class="icon"/> Home</a>
+        </li>
+        -->
+        <tal:loop repeat="menu viewlet.menus"> 
+          <li tal:condition="menu.submenu"> 
+            <a class="withsubmenu"
+	       tal:attributes=" href menu.action; rel repeat['menu'].index">
+              <span tal:content="menu.title"/> <b class="caret"></b>
+            </a>
+          </li>
+          <li tal:condition="not: menu.submenu"
+	      tal:attributes="class menu['selected'] and 'active' or None">
+            <a href="" tal:attributes="href menu.action"
+	       tal:content="structure menu.title"> </a>
+          </li>
+        </tal:loop>
+        <tal:loop repeat="menu viewlet.renderableitems">
+          <span tal:replace="structure menu.render()"> </span>
+        </tal:loop>
+      </ul>
+      <ul id="quicklinks" class="nav navbar-nav navbar-right"
+	  tal:condition="quicklinks"
+	  tal:define="quicklinks viewlet.quicklinks()">
+	<li class="dropdown yellow">
+          <a data-toggle="dropdown" class="dropdown-toggle quick-link" href="#">
+	    Quick links <b class="caret"></b>
+	  </a>
+          <ul role="menu" class="dropdown-menu">
+	    <li tal:repeat="menu quicklinks"> 
+	      <a href="" tal:attributes="href menu.action"
+		 tal:content="structure menu.title"> </a>
+	    </li>
+          </ul>
+	</li>
+      </ul>
+    </div>
+    <tal:loop repeat="menu viewlet.menus">
+      <div class="nav-selectmenu submenu"
+           tal:attributes="id 'submenu-%s' % repeat['menu'].index;
+			   style menu['selected'] and 'display: block' or 'display: none'">
+        <ul>
+          <li tal:repeat="submenu menu.submenu">
+            
+          <a tal:attributes="href submenu.action"> 
+            <span tal:condition="submenu.icon" class="icon"> <i class="" tal:attributes="class submenu.icon" aria-hidden="true"></i> </span>
+            <span tal:content="submenu.title"> </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </tal:loop>
+  </div>
+</nav>
+<script language="javascript">
+  $( document ).ready(function() {
+    $(".nav > li > a.withsubmenu")
+      .click(function(e) {
+        e.preventDefault();
+        $('div.submenu').hide();
+        var id = 'submenu-' + $(this).attr('rel');
+        $('#' + id).show();
+	$('.nav > li').removeClass('active');
+	$(this).parent('li').addClass('active');
+      })        
+   });
+</script>
