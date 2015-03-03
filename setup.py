@@ -36,7 +36,7 @@ setup(name='siguvtheme.resources',
       extras_require = {'test': tests_require},
       entry_points={
          'fanstatic.libraries': [
-            'siguvtheme = siguvtheme.resources:library',
+            'siguvtheme.resources = siguvtheme.resources:library',
             ],
       }
       )
