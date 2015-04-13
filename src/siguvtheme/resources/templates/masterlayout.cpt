@@ -34,7 +34,7 @@
 	    <div tal:content="structure provider:uvc-above-body" />
 	    <div id="uvc-tabs" class="pull-right"
 		 tal:content="structure provider:uvc-tabs" />
-	    <div tal:content="structure view.content()" />
+	    <div tal:content="structure content" />
 	    <div tal:content="structure provider:uvc-below-body" />
           </div>
           <!--
