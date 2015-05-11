@@ -16,8 +16,8 @@ siguv_css = Resource(library, 'siguv.css', compiler='less', source='siguv.less')
 
 maincss = Resource(library, 'main.css', depends=[bootstrap_css, siguv_css])
 mainjs = Resource(library, 'main.js', bottom=True)
-siguvcss = Resource(library, 'siguvtheme.css')
-tune = Group([maincss, siguvcss, cbs, jbs, mainjs])
+#siguvcss = Resource(library, 'siguvtheme.css')
+tune = Group([maincss, cbs, jbs, mainjs])
 
 logger = logging.getLogger('uvcsite.bg.siguvtheme')
 
