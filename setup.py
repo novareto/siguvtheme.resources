@@ -31,12 +31,12 @@ setup(name='siguvtheme.resources',
           'js.jquery',
           'megrok.pagetemplate',
           'setuptools',
-          'uvc.siguvtheme',
       ],
       extras_require = {'test': tests_require},
       entry_points={
          'fanstatic.libraries': [
             'siguvtheme.resources = siguvtheme.resources:library',
+            'tbtless = siguvtheme.resources:lessfiles',
             ],
       }
       )

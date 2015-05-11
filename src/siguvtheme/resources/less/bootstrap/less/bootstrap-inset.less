@@ -1,0 +1,142 @@
+@import "variables.less";
+
+
+// Default 940px grid
+// -------------------------
+@gridColumns:             16;
+@gridColumnWidth:         40px;
+@gridGutterWidth:         10px;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// 1200px min
+@gridColumnWidth1200:     70px;
+@gridGutterWidth1200:     10px;
+@gridRowWidth1200:        (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+
+// 768px-979px
+@gridColumnWidth768:      36px;
+@gridGutterWidth768:      10px;
+@gridRowWidth768:         (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+
+
+// Fluid grid
+// -------------------------
+@fluidGridColumnWidth:    percentage(@gridColumnWidth/@gridRowWidth);
+@fluidGridGutterWidth:    percentage(@gridGutterWidth/@gridRowWidth);
+
+// 1200px min
+@fluidGridColumnWidth1200:     percentage(@gridColumnWidth1200/@gridRowWidth1200);
+@fluidGridGutterWidth1200:     percentage(@gridGutterWidth1200/@gridRowWidth1200);
+
+// 768px-979px
+@fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
+@fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
+
+
+/* grid */
+
+.inset(@column: 1) {
+	margin-left: 0 - ((@gridColumnWidth * @column) + (@gridGutterWidth * (@column - 1)));
+}
+
+.inset1200(@column: 1) {
+	margin-left: 0 - ((@gridColumnWidth1200 * @column) + (@gridGutterWidth1200 * (@column - 1)));
+}
+
+.inset768(@column: 1) {
+	margin-left: 0 - ((@gridColumnWidth768 * @column) + (@gridGutterWidth768 * (@column - 1)));
+}
+
+.insetfluid(@column: 1) {
+	margin-left: -((@fluidGridColumnWidth * @column) + (@fluidGridGutterWidth * (@column - 1)));
+	*margin-left: -((@fluidGridColumnWidth * @column) + (@fluidGridGutterWidth * (@column - 1)) - (.5 / @gridRowWidth * 100 * 1%) - (.5 / @gridRowWidth * 100 * 1%));
+}
+
+.inset1 { .inset(1); }
+.inset2 { .inset(2); }
+.inset3 { .inset(3); }
+.inset4 { .inset(4); }
+.inset5 { .inset(5); }
+.inset6 { .inset(6); }
+.inset7 { .inset(7); }
+.inset8 { .inset(8); }
+.inset9 { .inset(9); }
+.inset10 { .inset(10); }
+.inset11 { .inset(11); }
+.inset12 { .inset(12); }
+.inset13 { .inset(13); }
+.inset14 { .inset(14); }
+.inset15 { .inset(15); }
+.inset16 { .inset(16); }
+
+@media (min-width: 1200px) {
+	.inset1 { .inset1200(1); }
+	.inset2 { .inset1200(2); }
+	.inset3 { .inset1200(3); }
+	.inset4 { .inset1200(4); }
+	.inset5 { .inset1200(5); }
+	.inset6 { .inset1200(6); }
+	.inset7 { .inset1200(7); }
+	.inset8 { .inset1200(8); }
+	.inset9 { .inset1200(9); }
+	.inset10 { .inset1200(10); }
+	.inset11 { .inset1200(11); }
+	.inset12 { .inset1200(12); }
+	.inset13 { .inset1200(13); }
+	.inset14 { .inset1200(14); }
+	.inset15 { .inset1200(15); }
+	.inset16 { .inset1200(16); }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.inset1 { .inset768(1); }
+	.inset2 { .inset768(2); }
+	.inset3 { .inset768(3); }
+	.inset4 { .inset768(4); }
+	.inset5 { .inset768(5); }
+	.inset6 { .inset768(6); }
+	.inset7 { .inset768(7); }
+	.inset8 { .inset768(8); }
+	.inset9 { .inset768(9); }
+	.inset10 { .inset768(10); }
+	.inset11 { .inset768(11); }
+	.inset12 { .inset768(12); }
+	.inset13 { .inset768(13); }
+	.inset14 { .inset768(14); }
+	.inset15 { .inset768(15); }
+	.inset16 { .inset768(16); }
+}
+
+@media (max-width: 767px) {
+	[class*="col-md"] {
+		margin-left: 0;
+	}
+}
+
+/* fluid */
+
+.row .inset1 { .insetfluid(1); }
+.row .inset2 { .insetfluid(2); }
+.row .inset3 { .insetfluid(3); }
+.row .inset4 { .insetfluid(4); }
+.row .inset5 { .insetfluid(5); }
+.row .inset6 { .insetfluid(6); }
+.row .inset7 { .insetfluid(7); }
+.row .inset8 { .insetfluid(8); }
+.row .inset9 { .insetfluid(9); }
+.row .inset10 { .insetfluid(10); }
+.row .inset11 { .insetfluid(11); }
+.row .inset12 { .insetfluid(12); }
+.row .inset13 { .insetfluid(13); }
+.row .inset14 { .insetfluid(14); }
+.row .inset15 { .insetfluid(15); }
+.row .inset16 { .insetfluid(16); }
+
+@media (max-width: 767px) {
+	.row [class*="col-md"] {
+		margin-left: 0;
+	}
+	.row [class*="col-md"]:first-child {
+		margin-left: 0;
+	}
+}
