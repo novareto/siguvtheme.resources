@@ -1,0 +1,79 @@
+@media (max-width: 768px) {
+	.outer-wrapper {
+	height: auto;
+	min-height: auto;
+	margin: 0 auto;
+	width: auto;
+	padding: 0 auto;
+	}
+}
+
+@media (max-width: 480px) {
+  
+}
+@media (max-width: 767px) {
+  .canvas-navigation.list-inline li.current {
+    min-width: 45%;
+	}
+	.canvas-navigation.list-inline li {
+  min-width: 8%;
+  }
+}
+@media (max-width: 960px) {
+      .nav-selectmenu ul     { display: none; }
+      .nav-selectmenu select { display: inline-block; }
+    }
+
+/* OFF-Canvas: CSS specific to the 2x3 columns version */
+@media (min-width:764px) and (max-width: 1198px) {
+	.flexmenu.fm-lg > ul > li {
+display: block;
+width: 50%;
+}
+.flexmenu.fm-lg li span, 
+.flexmenu.fm-lg li span.icon {
+		display: inline-block;
+	}
+.flexmenu.fm-lg li span {
+text-align: left;
+font-size: 0.9em;
+}
+.flexmenu.fm-lg li span.icon {
+		width: 50%;
+		padding-top:0;
+	}
+.flexmenu.fm-lg li .icon + span {
+		font-size: 1em;
+	}
+	.icon + span {
+		position: relative;
+		top: -0.2em;
+	}
+.flexmenu.fm-lg li i {
+		display: inline-block;
+		padding: 8% 9%;
+		border: 4px solid transparent;
+		border-radius: 50%;
+		font-size: 1.5em;
+		background: rgba(255,255,255,0.1);
+		-webkit-transition: border .5s;
+		-moz-transition: border .5s;
+		-o-transition: border .5s;
+		-ms-transition: border .5s;
+		transition: border .5s;
+	}
+/* menu active */
+.flexmenu.fm-lg li.active:nth-child(6n+1),
+.flexmenu.fm-lg li.active:nth-child(6n+2),
+.flexmenu.fm-lg li.active:nth-child(6n+3),
+.flexmenu.fm-lg li.active:nth-child(6n+4),
+.flexmenu.fm-lg li.active:nth-child(6n+5) {
+  border-bottom: 0;
+}
+.flexmenu.fm-lg li:nth-child(6n+5) {
+  clear:left;
+}
+i.glyphicon {
+line-height: 0.95;
+}
+}

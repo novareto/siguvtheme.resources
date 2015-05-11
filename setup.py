@@ -37,6 +37,7 @@ setup(name='siguvtheme.resources',
       entry_points={
          'fanstatic.libraries': [
             'siguvtheme.resources = siguvtheme.resources:library',
+            'tbtless = siguvtheme.resources:lessfiles',
             ],
       }
       )

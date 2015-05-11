@@ -3,8 +3,14 @@
 import logging
 from fanstatic import Library, Resource, Group
 from js.jquery import jquery
-from uvc.siguvtheme.resources import css, js, pretty, inset
 
+
+lessfiles = Library('uvc.siguvtheme', 'less')
+css = Resource(lessfiles, 'bootstrap/css/siguvtheme.css', compiler='less', source='siguvtheme.less')
+js = Resource(lessfiles, 'bootstrap/js/bootstrap.js')
+
+pretty = Resource(lessfiles, 'bootstrap/js/google-code-prettify/prettify.css')
+inset = Resource(lessfiles, 'assets/css/bootstrap-inset.css')
 
 library = Library('siguvtheme.resources', 'static')
 maincss = Resource(library, 'main.css', depends=[css])
@@ -16,5 +22,6 @@ logger = logging.getLogger('uvcsite.bg.siguvtheme')
 
 def log(message, summary='', severity=logging.DEBUG):
     logger.log(severity, '%s %s', summary, message)
+
 
 
