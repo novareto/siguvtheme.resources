@@ -1,3 +1,6 @@
+// Bootstrap Import
+@import "siguv_variables.less";
+
 body {
     background: url("images/bg.jpg") repeat fixed left top rgba(0, 0, 0, 0);
     margin: 0 auto;
@@ -7,6 +10,7 @@ body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 12px;
 }
+
 
 #personalpreferences .navbar-nav > li > a {
     color: #004994;
@@ -286,9 +290,10 @@ input[type="submit"] {
   padding: 5px;
 }
 
+.radio input[type="radio"],
 input[type="radio"],
 input[type="checkbox"] {
-  margin: -3px 5px 0 0;
+    margin-left: 0px;
 }
 input.no-width {
   width: auto;
