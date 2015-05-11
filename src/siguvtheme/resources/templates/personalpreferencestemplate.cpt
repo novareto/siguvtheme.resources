@@ -1,38 +1,29 @@
-<div id="site-action" class="col-md-6 col-xs-16 pull-right">
-  <div class="navbar">
-    <a class="collapsed" data-target=".navbar-responsive-collapse"
-       data-toggle="collapse"> </a>
-    <div class="collapse navbar-collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav hidden-xs pull-right">
-	<tal:loop repeat="menu viewlet.getFooterViewlet()">
-	  <li tal:attributes="id menu['id']; class menu['selected'] and 'active' or ''">
-	    <a href=""
-	       tal:attributes="href menu['action']"
-	       tal:content="menu['title']" />
-          </li>
-          <li class="divider-vertical" tal:condition="not repeat['menu'].end">&nbsp;</li>
-        </tal:loop>
-      </ul>
-      <nav class="" role="navigation" style="clear: both">
-	<div id="navbar-login" class="pull-right">
-          <ul class="nav">
-            <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <span class="glyphicon glyphicon-user"></span> <span tal:replace="viewlet.name"/> <b class="caret"></b>
-	      </a>
-              <ul class="dropdown-menu">
-		<tal:loop repeat="menu viewlet.menus">
-      <li class="divider" tal:condition="menu['action'] == 'divider'"> DIVIDER </li>
-		  <li tal:condition="menu['action'] != 'divider'" tal:attributes="id menu['id']; class menu['selected'] and 'active' or ''">
-		    <a href="" tal:attributes="href menu['action']" tal:content="menu['title']"> </a>
-		  </li>
-		</tal:loop>
-              </ul>
-            </li>
-	    
-          </ul>
-	</div>
-      </nav>
-    </div>
+<div id="personalpreferences" class="pull-right hidden-xs" >
+  <ul class="nav navbar-nav hidden-xs">
+    <tal:loop repeat="menu viewlet.getFooterViewlet()">
+      <li tal:attributes="id menu['id']; class menu['selected'] and 'active' or ''">
+	<a tal:attributes="href menu['action']" tal:content="menu['title']" />
+      </li>
+      <li class="divider-vertical" tal:condition="not repeat['menu'].end">&nbsp;</li>
+    </tal:loop>
+  </ul>
+  <div id="userdropdown">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+	<a data-toggle="dropdown" id="dropdown-user" class="dropdown-toggle"> 
+	  <span class="glyphicon glyphicon-user"></span> 
+	  <span tal:replace="viewlet.name"> </span> 
+	  <b class="caret"></b> 
+	</a>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-user">
+	  <tal:loop repeat="menu viewlet.menus">
+	    <li class="divider" tal:condition="menu['action'] == 'divider'"> DIVIDER </li>
+	    <li tal:condition="menu['action'] != 'divider'" tal:attributes="id menu['id']; class menu['selected'] and 'active' or ''">
+	      <a href="" tal:attributes="href menu['action']" tal:content="menu['title']"> </a>
+	    </li>
+	  </tal:loop>
+	</ul>
+      </li>
+    </ul>
   </div>
 </div>

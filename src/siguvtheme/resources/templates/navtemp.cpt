@@ -1,57 +1,24 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
       <button class="navbar-toggle"
-	      data-target="div#navigation-mobile"
+	      data-target=".navbar-nav-collapse"
 	      data-toggle="collapse" type="button">
         <span class="sr-only">Toggle navigation</span>
-        <span class="glyphicon glyphicon-align-justify"></span>
-      </button>
-      <button class="navbar-toggle"
-	      data-target="div#personalmenu-mobile"
-	      data-toggle="collapse" type="button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="glyphicon glyphicon-user"> </span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
     </div>
-
-
-    <div id="personalmenu-mobile" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav visible-xs">
-        <tal:loop repeat="menu viewlet.usermenu">
-	    <li tal:condition="menu['action'] != 'divider'" tal:attributes="id menu['id']; class menu['selected'] and 'active' or ''">
-	      <a href="" tal:attributes="href menu['action']" tal:content="menu['title']"> </a>
-	    </li>
-    </tal:loop>
-      </ul>
-    </div>
-
-    <div id="navigation-mobile" class="no-transition collapse navbar-collapse">
-      <div id="sidebar-wrapper">
-	<ul class="nav navbar-nav visible-xs sidebar-nav" id="main-mobile-nav">
-	  <tal:loop repeat="menu viewlet.menus">
-	    <li class="dropdown" tal:condition="menu.submenu">
-	      <a class="dropdown-toggle sidebar-brand" data-toggle="dropdown" href="#"> <span tal:content="menu.title"> </span> <b class="caret"></b> </a>
-	      <ul tal:condition="menu.submenu" class="dropdown-menu">
-		<li tal:repeat="submenu menu.submenu">
-		  <a href="" tal:attributes="href submenu.action" tal:content="submenu.title" > </a>
-		</li>
-	      </ul>
-	    </li>
-	    <li tal:condition="not: menu.submenu" tal:attributes="class python: menu['selected'] and 'active' or ''">
-	      <a href="" tal:attributes="href menu.action" tal:content="structure menu.title"> </a>
-	    </li>
-	  </tal:loop>
-	</ul>
-      </div>
-    </div>
-
-    <div tal:attributes="id viewlet.id" class="collapse navbar-collapse navbar-nav-collapse">
+    <div tal:attributes="id viewlet.id"
+	 class="collapse navbar-collapse navbar-nav-collapse">
       <ul class="nav navbar-nav" id="main-nav">
-        <li class="active" tal:condition="False">
+        <!--
+        <li class="active">
           <a tal:attributes="href viewlet.application_url()">
           <span class="icon"/> Home</a>
         </li>
+        -->
         <tal:loop repeat="menu viewlet.menus"> 
           <li tal:condition="menu.submenu"> 
             <a class="withsubmenu"
@@ -72,7 +39,7 @@
       <ul id="quicklinks" class="nav navbar-nav navbar-right"
 	  tal:condition="quicklinks"
 	  tal:define="quicklinks viewlet.quicklinks()">
-	<li class="dropdown yellow hidden-xs">
+	<li class="dropdown yellow">
           <a data-toggle="dropdown" class="dropdown-toggle quick-link" href="#">
 	    Quick links <b class="caret"></b>
 	  </a>
@@ -114,10 +81,4 @@
 	$(this).parent('li').addClass('active');
       })        
    });
-
-   $("button.navbar-toggle[data-target='div#navigation-mobile']").click(function(e) {
-       e.preventDefault();
-       $("#wrapper").toggleClass("toggled");
-   });
-
 </script>

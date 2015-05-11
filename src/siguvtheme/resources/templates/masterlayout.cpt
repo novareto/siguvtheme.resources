@@ -1,56 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.css" />
     <meta charset="utf-8" />
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
   </head>
-  <body class="js">
-    <div class="wrapper-bg">
-      <header id="pagetop">
-	<div class="top-area">
-	  <div class="row">
-	    <div tal:replace="structure provider:uvc-pagetop" />
+  <body>
+    <div id="wrapper">
+      <div class="container" id="siteheader">
+	<div id="header" class="row" tal:content="structure provider:uvc-pagetop"> </div>
+	<div id="navigation" class="row" tal:content="structure provider:siguv-nav"> </div>
+      </div>
+      <div class="container" id="page-content-wrapper">
+	<div id="main">
+	  <div class="content">
+	    <div id="uvc-tabs" class="pull-right" tal:content="structure provider:uvc-tabs"></div>
+	    <div tal:content="structure provider:uvc-above-body"> </div>
+	    <div tal:content="structure view.content()"> </div>
+	    <div tal:content="structure provider:uvc-below-body"> </div>
 	  </div>
 	</div>
-      </header>
-    </div>
-
-    <div tal:replace="structure provider:siguv-nav" />
-
-    <div class="container" id="main">
-      <div class="row visible-xs" style="margin-bottom: 10px;">
-	<p class="col-md-12 subNavItem">
-	  <a class="side-menu-link" title="Click for sub-menu" href="#menu">
-	    <i class="subNav"></i>
-	  </a>
-	</p>
-      </div>
-      <div id="wrap" class="row wrap">
-        <div id="portal-column-content" class="main">
-          <div class="container content-wrapper" name="top">
-	    <div tal:content="structure provider:uvc-above-body" />
-	    <div id="uvc-tabs" class="pull-right"
-		 tal:content="structure provider:uvc-tabs" />
-	    <div tal:content="structure content" />
-	    <div tal:content="structure provider:uvc-below-body" />
-          </div>
-          <!--
-	  <div class="container">
-            <nav class="onpagebottom">
-              <a href="#pagetop" class="top hidden-xs">Zurück nach oben</a>
-            </nav>
-          </div>
--->
-	  <div class="clearfix"></div>
-	  <div class="container">
-	    <div id="footer" tal:content="structure provider:uvc-footer" />
-	  </div>
-        </div>
+	<div id="footer" tal:content="structure provider:uvc-footer"> </div>
       </div>
     </div>
-    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>
