@@ -8,7 +8,7 @@ from fanstatic import Library, Resource, Group
 
 library = Library('siguvtheme.resources', 'static')
 maincss = Resource(library, 'main.css')
-mainjs = Resource(library, 'main.js')
+mainjs = Resource(library, 'main.js', bottom=True)
 siguvcss = Resource(library, 'siguvtheme.css')
 tune = Group([maincss, siguvcss, mainjs])
 

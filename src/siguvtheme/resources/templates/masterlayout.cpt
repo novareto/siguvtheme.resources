@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css" />
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <meta charset="utf-8" />
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,13 +21,13 @@
 	  <div class="content">
 	    <div id="uvc-tabs" class="pull-right" tal:content="structure provider:uvc-tabs"></div>
 	    <div tal:content="structure provider:uvc-above-body"> </div>
-	    <div tal:content="structure content"> </div>
+	    <div tal:content="structure view.content()"> </div>
 	    <div tal:content="structure provider:uvc-below-body"> </div>
 	  </div>
 	</div>
 	<div id="footer" tal:content="structure provider:uvc-footer"> </div>
       </div>
     </div>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </body>
 </html>
