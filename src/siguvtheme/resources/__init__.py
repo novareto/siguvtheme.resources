@@ -6,6 +6,10 @@ from js.jquery import jquery
 
 library = Library('siguvtheme.resources', 'static')
 
+jbs = Resource(library, 'jasny-bootstrap.js', depends=[jquery])
+cbs = Resource(library, 'jasny-bootstrap.css')
+
+
 bootstrap_css = Resource(library, 'bootstrap_bundle.css', compiler='less', source='bootstrap_bundle.less')
 siguv_css = Resource(library, 'siguv.css', compiler='less', source='siguv.less')
 
@@ -13,7 +17,7 @@ siguv_css = Resource(library, 'siguv.css', compiler='less', source='siguv.less')
 maincss = Resource(library, 'main.css', depends=[bootstrap_css, siguv_css])
 mainjs = Resource(library, 'main.js', bottom=True)
 siguvcss = Resource(library, 'siguvtheme.css')
-tune = Group([maincss, siguvcss, mainjs])
+tune = Group([maincss, siguvcss, cbs, jbs, mainjs])
 
 logger = logging.getLogger('uvcsite.bg.siguvtheme')
 
