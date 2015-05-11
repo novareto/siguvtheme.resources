@@ -23,7 +23,7 @@
 	  <div class="content">
 	    <div id="uvc-tabs" class="pull-right" tal:content="structure provider:uvc-tabs"></div>
 	    <div tal:content="structure provider:uvc-above-body"> </div>
-	    <div tal:content="structure view.content()"> </div>
+	    <div tal:content="structure content"> </div>
 	    <div tal:content="structure provider:uvc-below-body"> </div>
 	  </div>
 	</div>

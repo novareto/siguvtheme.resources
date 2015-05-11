@@ -1,10 +1,10 @@
 <div id="personalpreferences" class="pull-right hidden-xs" >
   <ul class="nav navbar-nav hidden-xs">
-    <tal:loop repeat="menu viewlet.getFooterViewlet()">
-      <li tal:attributes="id menu['id']; class menu['selected'] and 'active' or ''">
-	<a tal:attributes="href menu['action']" tal:content="menu['title']" />
+    <tal:loop repeat="entry viewlet.getFooter()">
+      <li tal:attributes="id entry['id']; class entry['selected'] and 'active' or ''">
+	<a tal:attributes="href entry['action']" tal:content="entry['title']" />
       </li>
-      <li class="divider-vertical" tal:condition="not repeat['menu'].end">&nbsp;</li>
+      <li class="divider-vertical" tal:condition="not repeat['entry'].end">&nbsp;</li>
     </tal:loop>
   </ul>
   <div id="userdropdown">
@@ -16,10 +16,10 @@
 	  <b class="caret"></b> 
 	</a>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-user">
-	  <tal:loop repeat="menu viewlet.menus">
-	    <li class="divider" tal:condition="menu['action'] == 'divider'"> DIVIDER </li>
-	    <li tal:condition="menu['action'] != 'divider'" tal:attributes="id menu['id']; class menu['selected'] and 'active' or ''">
-	      <a href="" tal:attributes="href menu['action']" tal:content="menu['title']"> </a>
+	  <tal:loop repeat="entry viewlet.getPersonal()">
+	    <li class="divider" tal:condition="entry['action'] == 'divider'"> DIVIDER </li>
+	    <li tal:condition="entry['action'] != 'divider'" tal:attributes="id entry['id']; class entry['selected'] and 'active' or ''">
+	      <a href="" tal:attributes="href entry['action']" tal:content="entry['title']"> </a>
 	    </li>
 	  </tal:loop>
 	</ul>
