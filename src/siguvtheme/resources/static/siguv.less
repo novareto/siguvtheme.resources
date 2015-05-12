@@ -49,7 +49,7 @@ div#userdropdown {
 }
 
 #navigation .navbar .nav > li > a {
-    color: #ffffff;
+    color:#fff;
     font-size: 11px;
     font-weight: 400;
     font-style: normal;
@@ -671,7 +671,58 @@ div#navigation-mobile > ul > li:hover a {
 }
 }
 
-
+table td img {
+        max-width:inherit;
+        }
+.table-striped {
+        background:white;
+}
+.table-striped thead {
+        background-color:@blueLighter;
+        margin:0;
+        padding:0 5px 0 10px;
+        }
+.table th {
+        border-bottom:1px solid @blue !important;
+        }
+@media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
+  table.table-striped,
+  .table-striped thead,
+  .table-striped tbody,
+  .table-striped th,
+  .table-striped td,
+  .table-striped tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .table-striped thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-striped tr { border: 1px solid #ccc; }
+  .table-striped td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align:left;
+  }
+  .table-striped td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  .table-striped td:before { content: attr(data-title);}
+//  .table-striped td:nth-of-type(1):before { content: "Titel"; }
+//  .table-striped td:nth-of-type(2):before { content: "Bild"; }
+//  .table-striped td:nth-of-type(3):before { content: "Download"; }
+}
+}
 .no-transition {
   -webkit-transition: height 0.01s;
   -moz-transition: height 0.01s;
