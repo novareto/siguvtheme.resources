@@ -1,9 +1,9 @@
 <div class="" id="mobile-site-action"> 
   <div class="collapse navbar-collapse navbar-mobile-collapse">
     <ul class="mobile-site-action visible-xs">
-      <li tal:repeat="menu viewlet.menus"> 
-	<a href="" tal:attributes="href menu.action"
-	   tal:content="structure menu.title" />
+      <li tal:repeat="entry entries"> 
+	<a href="" tal:attributes="href entry.action"
+	   tal:content="structure entry.title" />
       </li>
     </ul>
   </div>
