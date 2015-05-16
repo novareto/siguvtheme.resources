@@ -15,15 +15,15 @@
   <body>
     <div id="wrapper">
       <div class="container" id="siteheader">
-	<div id="header" class="row" tal:content="structure provider:uvc-pagetop"> </div>
-	<div id="navigation" class="row" tal:content="structure provider:siguv-nav"> </div>
+	<div id="header" class="container" tal:content="structure provider:uvc-pagetop"> </div>
+	<div class="navigation" tal:content="structure provider:siguv-nav"> </div>
       </div>
       <div class="container" id="page-content-wrapper">
 	<div id="main">
 	  <div class="content">
 	    <div id="uvc-tabs" class="pull-right" tal:content="structure provider:uvc-tabs"></div>
 	    <div tal:content="structure provider:uvc-above-body"> </div>
-	    <div tal:content="structure content"> </div>
+	    <div tal:content="structure view.content()"> </div>
 	    <div tal:content="structure provider:uvc-below-body"> </div>
 	  </div>
 	</div>
