@@ -1,4 +1,4 @@
-<div id="personalpreferences" class="pull-right hidden-xs" >
+<div class="personalpreferences pull-right hidden-xs">
   <ul class="nav navbar-nav hidden-xs">
     <tal:loop repeat="entry viewlet.getFooter()">
       <li tal:attributes="id entry['id']; class entry['selected'] and 'active' or ''">
@@ -7,7 +7,7 @@
       <li class="divider-vertical" tal:condition="not repeat['entry'].end">&nbsp;</li>
     </tal:loop>
   </ul>
-  <div id="userdropdown">
+  <div class="userpreferences">
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
 	<a data-toggle="dropdown" id="dropdown-user" class="dropdown-toggle"> 
