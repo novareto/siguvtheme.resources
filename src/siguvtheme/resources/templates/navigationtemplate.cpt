@@ -29,8 +29,7 @@
       <div id="sidebar-wrapper">
 	<ul class="nav navbar-nav visible-xs sidebar-nav" id="main-mobile-nav">
 	  <tal:loop repeat="entry viewlet.getNavigation()">
-       
-	    <li class="dropdown" tal:condition="entry.get('submenu')">
+	    <li class="dropdown" tal:condition="getattr(entry, 'submenu', None)">
 	      <a class="dropdown-toggle sidebar-brand" data-toggle="dropdown" href="#"> <span tal:content="entry.title"> </span> <b class="caret"></b> </a>
 	      <ul tal:condition="entry.submenu" class="dropdown-menu">
 		<li tal:repeat="submenu entry.submenu">
@@ -38,7 +37,7 @@
 		</li>
 	      </ul>
 	    </li>
-	    <li tal:condition="'submenu' not in entry"
+	    <li tal:condition="not: getattr(entry, 'submenu', None)"
 	        tal:attributes="class python: entry.selected and 'active' or ''">
 	      <a href="" tal:attributes="href entry.action" tal:content="structure entry.title"> </a>
 	    </li>
@@ -54,13 +53,13 @@
           <span class="icon"/> Home</a>
         </li>
         <tal:loop repeat="entry viewlet.getNavigation()"> 
-          <li tal:condition="entry.get('submenu')"> 
+          <li tal:condition="getattr(entry, 'submenu', None)"> 
             <a class="withsubmenu"
 	       tal:attributes=" href entry.action; rel repeat['entry'].index">
               <span tal:content="entry.title"/> <b class="caret"></b>
             </a>
           </li>
-          <li tal:condition="not: entry.get('submenu')"
+          <li tal:condition="not: getattr(entry, 'submenu', None)"
 	      tal:attributes="class entry.selected and 'active' or None">
             <a href="" tal:attributes="href entry.action"
 	       tal:content="structure entry.title"> </a>
@@ -91,7 +90,7 @@
            tal:attributes="id 'submenu-%s' % repeat['entry'].index;
 			   style entry.selected and 'display: block' or 'display: none'">
         <ul>
-          <li tal:repeat="submenu entry.get('submenu', list())">
+          <li tal:repeat="submenu getattr(entry, 'submenu', list())">
             
           <a tal:attributes="href submenu.action"> 
             <span tal:condition="submenu.icon" class="icon"> <i class="" tal:attributes="class submenu.icon" aria-hidden="true"></i> </span>
