@@ -90,7 +90,7 @@
            tal:attributes="id 'submenu-%s' % repeat['entry'].index;
 			   style entry.selected and 'display: block' or 'display: none'">
         <ul>
-          <li tal:repeat="submenu getattr(entry, 'submenus', list())">
+          <li tal:repeat="submenu getattr(entry, 'submenu', list())">
             
           <a tal:attributes="href submenu.action"> 
             <span tal:condition="submenu.icon" class="icon"> <i class="" tal:attributes="class submenu.icon" aria-hidden="true"></i> </span>
