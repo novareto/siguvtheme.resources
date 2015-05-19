@@ -1,6 +1,6 @@
 // Bootstrap Import
-@import "siguv_variables.less";
 @import "tables.less";
+@import "siguv_variables.less";
 
 body {
     background: url("images/bg.jpg") repeat fixed left top rgba(0, 0, 0, 0);
@@ -29,10 +29,15 @@ body {
   margin:52px 10px 0px 0px;
 }
 
-.userpreferences .dropdown-menu > li > a {
-  padding: 3px 20px;
-  color: #333333;
+.userpreferences .dropdown-menu > li {
+  	 a {
+  	padding: 3px 20px;
+  	color: #333333;
+	}
 }
+.userpreferences .dropdown-menu > li.active a {
+    		color: @white !important;
+  	}
 .navbar-nav {
   	li > a {
     		color: @blue;
@@ -170,6 +175,9 @@ ul#documentactionsmenuviewlet {
 
 #uvc-tabs {
   margin-top: -1px;
+  li a {
+      padding: 3px 20px;
+  }
 }
 
 #documentactionsmenuviewlet {
