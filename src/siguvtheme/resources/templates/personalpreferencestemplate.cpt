@@ -1,5 +1,5 @@
 <div class="personalpreferences pull-right hidden-xs">
-  <ul class="nav navbar-nav hidden-xs">
+  <ul class="nav navbar-nav hidden-xs pull-right">
     <tal:loop repeat="entry viewlet.getFooter()">
       <li tal:attributes="id entry['id']; class entry['selected'] and 'active' or ''">
 	<a tal:attributes="href entry['action']" tal:content="entry['title']" />
