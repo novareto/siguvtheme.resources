@@ -1,5 +1,5 @@
-<div class="row pull-right" tal:define="menuitems viewlet.menus" tal:condition="menuitems">
-  <ul tal:attributes="id viewlet.id">
+<tal:menu define="menuitems viewlet.menus" condition="menuitems">
+  <ul tal:attributes="id viewlet.id" class="pull-right">
     <li tal:repeat="menu menuitems">
     <a href="" tal:attributes="href menu.action">
       <span src="" title="" alt=""
@@ -7,4 +7,4 @@
     </a>
     </li>
   </ul>
-</div>
+</tal:menu>
