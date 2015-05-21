@@ -22,6 +22,7 @@
 	<div id="main">
 	  <div class="content">
 	    <div id="uvc-tabs" class="row" tal:content="structure provider:uvc-tabs"></div>
+      <div id="doc-actions" class="row" tal:content="structure provider:uvc.docactions"></div>
 	    <div tal:content="structure provider:uvc-above-body"> </div>
 	    <div tal:content="structure view.content()"> </div>
 	    <div tal:content="structure provider:uvc-below-body"> </div>
