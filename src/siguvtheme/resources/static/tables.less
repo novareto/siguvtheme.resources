@@ -16,7 +16,7 @@ table td img {
         padding:0 5px 0 10px;
         }
 @media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
-  table.table-striped,
+  .table.table-striped,
   .table-striped thead,
   .table-striped tbody,
   .table-striped th,
@@ -31,7 +31,7 @@ table td img {
     left: -9999px;
   }
   .table-striped tr { border: 1px solid #ccc; }
-  .table-striped td {
+  .table.table-striped td {
     border: none;
     border-bottom: 1px solid #eee;
     position: relative;
@@ -39,7 +39,7 @@ table td img {
     white-space: normal;
     text-align:left;
   }
-  .table-striped td:before {
+  .table.table-striped td:before {
     position: absolute;
     top: 6px;
     left: 6px;
@@ -47,6 +47,6 @@ table td img {
     padding-right: 10px;
     white-space: nowrap;
   }
-  .table-striped td:before { content: attr(data-title);}
+  .table.table-striped td:before { content: attr(data-title);}
 }
 

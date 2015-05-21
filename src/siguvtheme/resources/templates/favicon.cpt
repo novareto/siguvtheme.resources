@@ -1,2 +1,1 @@
-<link type="image/x-ico; charset=binary" href="#" rel="shortcut icon"
-      tal:attributes="href static.get('favicon.ico', '')">
+<link type="image/x-ico; charset=binary" href="fanstatic/siguvtheme.resources/favicon.ico" rel="shortcut icon">

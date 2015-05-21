@@ -1,83 +1,46 @@
 <div>
-  <form action="." novalidate="novalidate" method="post" tal:attributes="action request.getURL()" enctype="multipart/form-data" class="form-horizontal">
-  <h1 tal:condition="view.label"
-      tal:content="view.label">Label</h1>
-  <p tal:condition="view.description"
-     tal:content="view.description">Description</p>
-  <p class="alert-message block-message"
-     tal:condition="view.status"
-     tal:content="view.status">Status</p>
-
-  <div class="wizard">
-    <ul class="steps">
-      <tal:steps tal:repeat="step view._getAvailableSubForms()">
-	<tal:index define="idx repeat['step'].index">
-	  <li tal:condition="view.step > idx" class="past">
-	    <span class="badge badge-info" tal:content="repeat['step'].number" />
-	    <a tal:attributes="href '%s/edit?jump_step=%s' % (view.url(), idx)">
-              <span tal:content="step.label" />
-	    </a>
-	    <span class="chevron"></span>
-	  </li>
-	  <li tal:condition="view.step == idx" class="active">
-	    <span class="badge badge-info" tal:content="repeat['step'].number" />
-	    <a><span tal:content="step.label" /></a>
-	    <span class="chevron"></span>
-	  </li>
-	  <li tal:condition="view.step < idx" class="future">
-	    <span class="badge badge-info" tal:content="repeat['step'].number" />
-	    <a><span tal:content="step.label" /></a>
-	    <span class="chevron"></span>
-	  </li>
-	</tal:index>
-      </tal:steps>
-    </ul>
-  </div>
-
+  <form action="." novalidate="novalidate" method="post" tal:attributes="action request.getURL()" enctype="multipart/form-data" class="">
+    <h1 tal:condition="view.label"
+	tal:content="view.label">Label</h1>
+    <p tal:condition="view.description"
+       tal:content="view.description">Description</p>
+    <p class="alert-message block-message"
+       tal:condition="view.status"
+       tal:content="view.status">Status</p>
+      
   <fieldset>
-      <legend tal:content="view.current.label" />
-      <div id="extrainfo" tal:replace="structure provider: uvcsite.extrainfo"/>
-      <div class="step-fields" tal:condition="view.current.fieldWidgets">
-        <div class="control-group" tal:repeat="widget view.current.fieldWidgets"
-              tal:attributes="class widget.error and 'control-group error' or 'control-group'; id 'field-' + widget.htmlId()">
+    <legend tal:content="view.current.label" />
+    <div id="extrainfo" tal:replace="structure provider: uvcsite.extrainfo" />
+    <div class="step-fields" tal:condition="view.current.fieldWidgets">
+      <div class="control-group" tal:repeat="widget view.current.fieldWidgets"
+	   tal:attributes="class widget.error and 'form-group alert-danger has-error' or 'form-group'; id 'field-' + widget.htmlId()">
 
-          <div class="row input controls">
-	    <label class="col-sm-2 control-label"
-		   tal:attributes="for widget.htmlId()">
-	      <span tal:content="widget.title">Name</span>
-	      <span tal:condition="widget.required">*</span>
-	    </label>
-
-	    <div class="col-sm-4">
-              <tal:widget tal:content="structure widget.render()" />
-	      <span class="help-block"
-		    tal:condition="widget.description"
-		    tal:content="widget.description"
-		    tal:attributes="for widget.htmlId()" />
-
-              <span class="help-inline"
-		  tal:condition="widget.error"
-		  tal:content="widget.error.title" />
-	    </div>
-          </div>
-        </div>
+	<label class=" control-label" tal:attributes="for widget.htmlId()">
+	  <span tal:content="widget.title">Name</span>
+	  <span tal:condition="widget.required">*</span>
+	</label>
+	<p class="help-block" tal:condition="widget.description" tal:content="widget.description" tal:attributes="for widget.htmlId()" />
+	
+	<tal:widget tal:content="structure widget.render()" />
+	
+	<p id="error-message" class="help-block" tal:condition="widget.error" tal:content="widget.error.title" />
       </div>
-      <div class="fields" tal:condition="view.fieldWidgets">
-        <span class="field" tal:repeat="widget view.fieldWidgets">
-          <tal:widget tal:content="structure widget.render()" />
-        </span>
-      </div>
-      <div class="form-actions col-sm-offset-2 col-sm-10">
-        <div class="action">
-         <span tal:repeat="widget view.actionWidgets">
+    </div>
+    <div class="fields" tal:condition="view.fieldWidgets">
+      <span class="field" tal:repeat="widget view.fieldWidgets">
+	<tal:widget tal:content="structure widget.render()" />
+      </span>
+    </div>
+    <div class="form-actions">
+      <div class="action">
+	<span tal:repeat="widget view.actionWidgets">
           <tal:widget tal:content="structure widget.render()" />
         </span>
         <span tal:repeat="widget view.current.actionWidgets">
-           <tal:widget tal:content="structure widget.render()" />
-         </span>
-        </div>
+	  <tal:widget tal:content="structure widget.render()" />
+	</span>
       </div>
+    </div>
   </fieldset>
-  </form>
+</form>
 </div>
-
