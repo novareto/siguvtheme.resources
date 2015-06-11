@@ -1,10 +1,11 @@
 <div class="personalpreferences pull-right hidden-xs">
   <ul class="nav navbar-nav hidden-xs pull-right">
     <tal:loop repeat="entry viewlet.getFooter()">
-      <li tal:attributes="id entry['id']; class entry['selected'] and 'active' or ''">
-	<a tal:attributes="href entry['action']" tal:content="entry['title']" />
+      <li tal:attributes="class entry.selected and 'active' or ''">
+	<a tal:attributes="href entry.action" tal:content="entry.title" />
       </li>
-      <li class="divider-vertical" tal:condition="not repeat['entry'].end">&nbsp;</li>
+      <li class="divider-vertical"
+	  tal:condition="not repeat['entry'].end">&nbsp;</li>
     </tal:loop>
   </ul>
   <div class="userpreferences">
@@ -17,9 +18,11 @@
 	</a>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-user">
 	  <tal:loop repeat="entry viewlet.getPersonal()">
-	    <li class="divider" tal:condition="entry['action'] == 'divider'"> DIVIDER </li>
-	    <li tal:condition="entry['action'] != 'divider'" tal:attributes="id entry['id']; class entry['selected'] and 'active' or ''">
-	      <a href="" tal:attributes="href entry['action']" tal:content="entry['title']"> </a>
+	    <li class="divider" tal:condition="entry.action == 'divider'" />
+	    <li tal:condition="entry.action != 'divider'"
+		tal:attributes="class entry.selected and 'active' or ''">
+	      <a href="" tal:attributes="href entry.action"
+		 tal:content="entry.title" />
 	    </li>
 	  </tal:loop>
 	</ul>
