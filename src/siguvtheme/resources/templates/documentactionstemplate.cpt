@@ -1,5 +1,5 @@
 <div class="dropdown pull-right"
-     tal:define="menuitems list(menu.entries)"
+     tal:define="menuitems list(entries)"
      tal:condition="menuitems">
   <button type="button" class="btn btn-default dropdown-toggle"
 	  data-toggle="dropdown" aria-expanded="false">
