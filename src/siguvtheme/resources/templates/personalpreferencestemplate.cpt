@@ -18,10 +18,10 @@
 	</a>
 	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-user">
 	  <tal:loop repeat="entry entries">
-	    <li class="divider" tal:condition="entry.action == 'divider'" />
-	    <li tal:condition="entry.action != 'divider'"
+	    <li class="divider" tal:condition="getattr(entry, 'action', None) == 'divider'" />
+	    <li tal:condition="getattr(entry, 'action', None) != 'divider'"
 		tal:attributes="class entry.selected and 'active' or ''">
-	      <a href="" tal:attributes="href entry.action"
+	      <a href="" tal:attributes="href entry.url"
 		 tal:content="entry.title" />
 	    </li>
 	  </tal:loop>
