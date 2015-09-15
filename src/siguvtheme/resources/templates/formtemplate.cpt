@@ -6,7 +6,7 @@
    novalidate="novalidate"
    i18n:domain="zeam.form.base"
    metal:define-macro="editform"
-   tal:attributes="action request.URL">
+   tal:attributes="action view.action_url">
 
   <h1 tal:condition="view.label" tal:content="view.label" />
   <p tal:condition="view.description" tal:content="view.description" />
