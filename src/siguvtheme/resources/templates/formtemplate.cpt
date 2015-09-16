@@ -17,7 +17,7 @@
   
   <div metal:define-macro="form-fieldset">
     
-    <div id="extrainfo" tal:replace="structure provider: uvcsite.extrainfo"></div>
+    <div id="extrainfo" tal:replace="structure provider: uvc-extrainfo"></div>
     
 
     <tal:fields condition="view.fieldWidgets">
