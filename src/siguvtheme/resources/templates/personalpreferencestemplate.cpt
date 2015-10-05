@@ -22,7 +22,7 @@
 	    <li tal:condition="getattr(entry, 'action', None) != 'divider'"
 		tal:attributes="class entry.selected and 'active' or ''">
 	      <a href="" tal:attributes="href entry.url"
-		 tal:content="entry.title" />
+		 tal:content="structure entry.title" />
 	    </li>
 	  </tal:loop>
 	</ul>

@@ -13,7 +13,7 @@
     <div id="extrainfo" tal:replace="structure provider: uvcsite.extrainfo" />
     <div class="step-fields" tal:condition="view.current.fieldWidgets">
       <div class="control-group" tal:repeat="widget view.current.fieldWidgets"
-	   tal:attributes="class widget.error and 'form-group alert-danger has-error' or 'form-group'; id 'field-' + widget.htmlId()">
+	   tal:attributes="class widget.error and 'form-group bs-callout bs-callout-danger has-error' or 'form-group'; id 'field-' + widget.htmlId()">
 
 	<label class=" control-label" tal:attributes="for widget.htmlId()">
 	  <span tal:content="widget.title">Name</span>
@@ -23,7 +23,7 @@
 	
 	<tal:widget tal:content="structure widget.render()" />
 	
-	<p id="error-message" class="help-block" tal:condition="widget.error" tal:content="widget.error.title" />
+	<p id="error-message" class="field-error help-block" tal:condition="widget.error" tal:content="widget.error.title" />
       </div>
     </div>
     <div class="fields" tal:condition="view.fieldWidgets">

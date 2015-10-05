@@ -27,3 +27,7 @@
   background-color: #f0f7fd;
   border-color: #d0e3f0;
 }
+
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+  margin-left: 0px;
+} 

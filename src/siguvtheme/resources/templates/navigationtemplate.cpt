@@ -19,7 +19,7 @@
       <ul class="nav navbar-nav visible-xs">
         <tal:loop repeat="entry viewlet.getUser()">
 	    <li tal:condition="entry['action'] != 'divider'" tal:attributes="id entry['id']; class entry['selected'] and 'active' or ''">
-	      <a href="" tal:attributes="href entry['action']" tal:content="entry['title']"> </a>
+	      <a href="" tal:attributes="href entry['action']" tal:content="structure entry['title']"> </a>
 	    </li>
     </tal:loop>
       </ul>
@@ -33,7 +33,7 @@
 	      <a class="dropdown-toggle sidebar-brand" data-toggle="dropdown" href="#"> <span tal:content="entry.title"> </span> <b class="caret"></b> </a>
 	      <ul tal:condition="entry.submenu" class="dropdown-menu">
 		<li tal:repeat="submenu entry.submenu">
-		  <a href="" tal:attributes="href submenu.action" tal:content="submenu.title" > </a>
+		  <a href="" tal:attributes="href submenu.action" tal:content="structure submenu.title" > </a>
 		</li>
 	      </ul>
 	    </li>
@@ -54,6 +54,9 @@
           <a tal:attributes="href viewlet.application_url()">
           <span class="icon"/> Home</a>
         </li>
+        <tal:loop repeat="entry viewlet.getRenderableItems()">
+          <span tal:replace="structure entry.render()"> </span>
+        </tal:loop>
         <tal:loop repeat="entry viewlet.getNavigation()"> 
           <li tal:condition="getattr(entry, 'submenu', None)"> 
             <a class="withsubmenu"
@@ -61,14 +64,9 @@
               <span tal:content="entry.title"/> <b class="caret"></b>
             </a>
           </li>
-          <li tal:condition="not: getattr(entry, 'submenu', None)"
-	      tal:attributes="class entry.selected and 'active' or None">
-            <a href="" tal:attributes="href entry.url"
-	       tal:content="structure entry.title"> </a>
+          <li tal:condition="not: getattr(entry, 'submenu', None)" tal:attributes="class entry.selected and 'active' or None">
+            <a href="" tal:attributes="href entry.url" tal:content="structure entry.title"> </a>
           </li>
-        </tal:loop>
-        <tal:loop repeat="entry viewlet.getRenderableItems()">
-          <span tal:replace="structure entry.render()"> </span>
         </tal:loop>
       </ul>
       <ul id="quicklinks" class="nav navbar-nav navbar-right"
