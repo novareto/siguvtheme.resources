@@ -23,7 +23,7 @@
 	
 	<tal:widget tal:content="structure widget.render()" />
 	
-	<p id="error-message" class="help-block" tal:condition="widget.error" tal:content="widget.error.title" />
+	<span id="error-message" class="help-block" tal:condition="widget.error" tal:content="widget.error.title" />
       </div>
     </div>
     <div class="fields" tal:condition="view.fieldWidgets">
