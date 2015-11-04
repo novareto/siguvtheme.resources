@@ -1,10 +1,17 @@
-<tal:menu define="menuitems viewlet.menus" condition="menuitems">
-  <ul tal:attributes="id viewlet.id" class="pull-right">
-    <li tal:repeat="menu menuitems">
-    <a class="btn" href="" tal:attributes="href menu.action">
+<div class="dropdown pull-right"
+     tal:define="menuitems list(entries)"
+     tal:condition="menuitems">
+  <button type="button" class="btn btn-default dropdown-toggle"
+	  data-toggle="dropdown" aria-expanded="false">
+    <span tal:replace="viewlet.name" /> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li tal:repeat="entry menuitems">
+    <a href="" tal:attributes="href entry.url">
       <span src="" title="" alt=""
-      tal:attributes="class menu.icon; title menu.title; alt menu.title" />
+	    tal:content="entry.title"
+	    tal:attributes="class entry.title; alt entry.title" />
     </a>
     </li>
   </ul>
-</tal:menu>
+</div>

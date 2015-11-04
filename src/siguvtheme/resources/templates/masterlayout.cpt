@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <tal:header tal:content="structure provider:uvc-resources" />
-    <tal:header tal:content="structure provider:uvc-headers" />
+    <tal:header tal:content="structure provider:headers" />
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <meta charset="utf-8" />
     <title></title>
@@ -14,19 +13,19 @@
   <body>
     <div id="wrapper">
       <div class="container" id="siteheader">
-	<div id="header" class="container" tal:content="structure provider:uvc-pagetop"> </div>
-	<div class="navigation" tal:content="structure provider:siguv-nav"> </div>
+	<div id="header" class="container" tal:content="structure provider:pagetop"> </div>
+	<div class="navigation" tal:content="structure provider:navigation"> </div>
       </div>
       <div class="container" id="page-content-wrapper">
 	<div id="main">
 	  <div class="content">
-	    <div id="uvc-tabs" class="row" tal:content="structure provider:uvc-tabs"></div>
-	    <div tal:content="structure provider:uvc-above-body"> </div>
-	    <div tal:content="structure view.content()"> </div>
-	    <div tal:content="structure provider:uvc-below-body"> </div>
+	    <div id="uvc-tabs" class="row" tal:content="structure provider:tabs"></div>
+	    <div tal:content="structure provider:above-body"> </div>
+	    <div tal:content="structure content"> </div>
+	    <div tal:content="structure provider:below-body"> </div>
 	  </div>
 	</div>
-	<div id="footer" tal:content="structure provider:uvc-footer"> </div>
+	<div id="footer" tal:content="structure provider:footer"> </div>
       </div>
     </div>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
