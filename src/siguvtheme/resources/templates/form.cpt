@@ -9,23 +9,12 @@
   <h1 tal:condition="view.label" tal:content="view.label">Label</h1>
   <p tal:condition="view.description"
      tal:content="view.description">Description</p>
-<!--
-  <p class="form-status"
-     tal:condition="view.status"
-     tal:content="view.status">Status</p>
-
-  <div tal:condition="view.errors and view.formErrors"
-       tal:repeat="error view.formErrors"
-       class="alert alert-danger">
-    <p tal:content="error.title" />
-  </div>
--->
   <div class="fields"
        metal:define-macro="form-fieldset"
        tal:condition="view.fieldWidgets">
     <div tal:repeat="widget view.fieldWidgets"
          tal:attributes="class widget.error and 'form-group bs-callout bs-callout-danger has-error' or 'form-group';
-                         id 'field-' + widget.htmlId()">
+                         id string:field-${widget.htmlId()}">
       <label class="field-label control-label" for="#"
              tal:attributes="for widget.htmlId()"
              tal:condition="widget.isVisible()">
