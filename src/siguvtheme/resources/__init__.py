@@ -7,6 +7,8 @@ from js.jquery import jquery
 
 library = Library('siguvtheme.resources', 'static')
 
+
+jsbs = Resource(library, 'bootstrap-3.3.4/dist/js/bootstrap.min.js', depends=[jquery])
 jbs = Resource(library, 'jasny-bootstrap.js', depends=[jquery])
 cbs = Resource(library, 'jasny-bootstrap.css')
 
@@ -21,7 +23,7 @@ siguv_css = Resource(
 maincss = Resource(library, 'main.css', depends=[bootstrap_css, siguv_css])
 mainjs = Resource(library, 'main.js', bottom=True)
 #siguvcss = Resource(library, 'siguvtheme.css')
-tune = Group([maincss, cbs, jbs, mainjs])
+tune = Group([maincss, cbs, jbs, mainjs, jsbs])
 
 datepicker_css = Resource(
     library, path.join('datepicker', 'bootstrap-datepicker.css'))

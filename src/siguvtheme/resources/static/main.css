@@ -31,3 +31,12 @@
 .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
   margin-left: 0px;
 } 
+
+p {
+ font-family: DGUVMetaWeb-Normal,sans-serif;
+}
+
+.personalpreferences {
+    font-family: DGUVMetaWeb-Normal,sans-serif;
+    font-size: 15px;
+}
