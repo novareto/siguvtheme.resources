@@ -1,7 +1,7 @@
 <div id="divLogo" class="logo-wrapper col-md-4">
   <h1 class="logo">
     <a tal:attributes="href viewlet.application_url()">
-      <img class="img-responsive" src="http://www.bgetem.de/logo.png" />
+      <img class="img-responsive" src="fanstatic/siguvtheme.resources/logo.png" />
     </a>
   </h1>
 </div>
