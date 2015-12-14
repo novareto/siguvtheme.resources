@@ -133,11 +133,11 @@ h6 {
   margin-bottom: 10px;
 }
 .personalpreferences {
-  margin: 20px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 .userpreferences {
   clear: right;
-  margin: 52px 10px 0px 0px;
+  margin: 62px 10px 0px 0px;
 }
 .userpreferences .dropdown-menu > li a {
   padding: 3px 20px;
@@ -176,7 +176,7 @@ h6 {
   text-decoration: none;
   letter-spacing: normal;
   word-spacing: 0px;
-  line-height: 20px;
+  line-height: 27px;
   padding: 8px 12px 6px 12px;
 }
 .navigation .navbar .nav > li:hover,
@@ -518,8 +518,8 @@ div#navigation-mobile > ul > li:hover a {
   float: left;
   margin: 0;
   padding: 0 20px 0 30px;
-  height: 46px;
-  line-height: 46px;
+  height: 36px;
+  line-height: 36px;
   position: relative;
   background: #ededed;
   color: #999999;
@@ -527,7 +527,7 @@ div#navigation-mobile > ul > li:hover a {
   cursor: default;
 }
 .wizard ul li .chevron {
-  border: 24px solid transparent;
+  border: 19px solid transparent;
   border-left: 14px solid 0px;
   border-right: 0;
   display: block;
