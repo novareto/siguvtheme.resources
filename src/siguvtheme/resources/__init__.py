@@ -30,7 +30,7 @@ datepicker_css = Resource(
 
 datepicker = Resource(
     library, path.join('datepicker', 'bootstrap-datepicker.js'),
-    depends=[datepicker_css, tune])
+    depends=[datepicker_css])
 
 datepicker_de = Resource(
     library, path.join('datepicker', 'locales', 'bootstrap-datepicker.de.js'),
