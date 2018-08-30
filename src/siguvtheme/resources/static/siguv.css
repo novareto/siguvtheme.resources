@@ -144,7 +144,7 @@ h6 {
   color: #333333;
 }
 .userpreferences .dropdown-menu > li.active a {
-  color: #ffffff !important;
+  color: #FFF !important;
 }
 .navbar-nav li > a {
   color: #004994;
@@ -328,9 +328,6 @@ legend {
 }
 .form-responsive .radio {
   margin-left: 24px;
-}
-@media (min-width: 768px) {
-  
 }
 #content > h1,
 #content > h2,
@@ -694,7 +691,7 @@ div#navigation-mobile > ul > li:hover a {
     margin: 0;
   }
   #main-mobile-nav li > a:hover {
-    background-color: #ffffff !important;
+    background-color: #FFF !important;
   }
   #main-mobile-nav .open > a {
     border: 0;
